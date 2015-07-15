@@ -1,0 +1,9 @@
+{
+  "name": "react-util",
+  "private": true,
+  "version": "0.1.0",
+  "main": "index.js",
+  "repository": "onebook/react-util",
+  "author": "haoxin",
+  "license": "MIT"
+}

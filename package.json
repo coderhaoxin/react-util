@@ -1,15 +1,19 @@
 {
   "name": "react-util",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.2.0",
   "main": "build/index.js",
   "scripts": {
-    "build": "babel --stage 0 lib --out-dir build && webpack --config webpack.js",
+    "build": "babel --stage 0 lib --out-dir build",
+    "example": "npm run build && webpack --config webpack.js",
     "postinstall": "npm run build"
   },
   "repository": "onebook/react-util",
   "author": "haoxin",
   "license": "MIT",
+  "files": [
+    "lib/"
+  ],
   "dependencies": {
     "babel": "5"
   },

@@ -8,13 +8,20 @@ npm i onebook/react-util
 ### APIs
 
 ```js
-import { allRefVals, refVal, focus, clear } from 'react-util'
+import {
+  allRefVals,
+  refVal,
+  focus,
+  clear
+} from 'react-util'
 ```
 
 * `this::allRefVals()`
-* get val - `this::refVal('some')` or set val - `this::refVal('some', 'value')`
-* `this::focus('some')`
-* `this::clear('some')`
+* `this::refVal('ref')`
+  - get val - `this::refVal('ref')`
+  - set val - `this::refVal('ref', 'value')`
+* `this::focus('ref')`
+* `this::clear('ref')`
 
 ### License
 MIT

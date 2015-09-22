@@ -1,8 +1,12 @@
 
-import { allRefVals, refVal, focus, clear } from '..'
+import { allRefVals, clearAll, refVal, focus, clear } from '..'
 import { Component, render } from 'react'
 
 class App extends Component {
+  clearAllRefVals() {
+    this::clearAll()
+  }
+
   getAllRefVals() {
     console.log('all refs: %o', this::allRefVals())
   }
@@ -31,9 +35,11 @@ class App extends Component {
         <input type='text' ref='b' />
         <input type='text' ref='c' />
         <input type='text' ref='d' />
-        <input type='text' ref='H_i' />
+        <input type='text' ref='e-a' />
+        <input type='text' ref='e_b' />
 
         <button onClick={this.getAllRefVals.bind(this)}>allRefVals</button>
+        <button onClick={this.clearAllRefVals.bind(this)}>clearAll</button>
         <button onClick={this.getRefVal.bind(this)}>getRefVal a</button>
         <button onClick={this.focus.bind(this)}>focus d</button>
         <button onClick={this.clear.bind(this)}>clear a</button>

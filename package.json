@@ -1,23 +1,26 @@
 {
   "name": "react-util",
-  "private": true,
-  "version": "0.2.0",
+  "version": "1.0.0",
   "main": "build/index.js",
   "scripts": {
     "build": "babel --stage 0 lib --out-dir build",
     "example": "npm run build && webpack --config webpack.js",
-    "postinstall": "npm run build"
+    "prepublish": "npm run build"
   },
   "repository": "onebook/react-util",
   "author": "haoxin",
   "license": "MIT",
+  "keywords": [
+    "toolbox",
+    "react",
+    "utils"
+  ],
   "files": [
+    "build/",
     "lib/"
   ],
-  "dependencies": {
-    "babel": "5"
-  },
   "devDependencies": {
+    "babel": "5",
     "babel-core": "5",
     "babel-loader": "5",
     "react": "0.13",

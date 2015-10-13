@@ -1,5 +1,5 @@
 
-import { allRefVals, clearAll, refVal, focus, clear } from '..'
+import { allRefVals, clearAll, setRefs, refVal, focus, clear } from '..'
 import { Component, render } from 'react'
 
 class App extends Component {
@@ -14,6 +14,15 @@ class App extends Component {
   getRefVal() {
     console.log('a is: %s', this::refVal('a'))
     this::refVal('not exist')
+  }
+
+  setRefs() {
+    this::setRefs({
+      a: 'a',
+      b: 'b',
+      c: 'c',
+      d: 'd'
+    })
   }
 
   focus() {
@@ -43,6 +52,8 @@ class App extends Component {
         <button onClick={this.getRefVal.bind(this)}>getRefVal a</button>
         <button onClick={this.focus.bind(this)}>focus d</button>
         <button onClick={this.clear.bind(this)}>clear a</button>
+
+        <button onClick={this.setRefs.bind(this)}>setRefs</button>
       </div>
     )
   }

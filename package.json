@@ -1,6 +1,6 @@
 {
   "name": "react-util",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "main": "build/index.js",
   "scripts": {
     "build": "babel --stage 0 lib --out-dir build",

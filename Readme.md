@@ -5,7 +5,20 @@
 npm i react-util
 ```
 
+### Components
+
+* Input
+
 ### APIs
+
+* `this::allRefVals()`
+* `this::clearAll()`
+* `this::setRefs(obj)`
+* `this::refVal()`
+  - get val - `this::refVal('ref')`
+  - set val - `this::refVal('ref', 'val')`
+* `this::clear('ref')`
+* `this::focus('ref')`
 
 ```js
 
@@ -19,15 +32,6 @@ class Com extends Component {
 }
 
 ```
-
-* `this::allRefVals()`
-* `this::clearAll()`
-* `this::setRefs(obj)`
-* `this::refVal()`
-  - get val - `this::refVal('ref')`
-  - set val - `this::refVal('ref', 'val')`
-* `this::clear('ref')`
-* `this::focus('ref')`
 
 ### License
 MIT

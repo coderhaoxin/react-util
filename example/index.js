@@ -1,9 +1,17 @@
 
-import { Component, render } from 'react'
+import { render } from 'react-dom'
+import { Component } from 'react'
 
 import {
+  uncheckedVals,
+  checkedVals,
+  uncheckRefs,
+  checkRefs,
+  uncheck,
+  check,
+
   allRefVals,
-  clearAll,
+  clearRefs,
   setRefs,
   refVal,
   focus,
@@ -50,7 +58,7 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <article>
         <section>
           <input type='text' ref='a' />
           <input type='text' ref='b' />
@@ -59,22 +67,35 @@ class App extends Component {
           <input type='text' ref='e-a' />
           <input type='text' ref='e_b' />
 
-          <button onClick={this.getAllRefVals.bind(this)}>allRefVals</button>
-          <button onClick={ () => { this::clearAll() } }>clearAll</button>
-          <button onClick={this.getRefVal.bind(this)}>getRefVal a</button>
-          <button onClick={this.focus.bind(this)}>focus d</button>
-          <button onClick={this.clear.bind(this)}>clear a</button>
+          <button onClick={::this.getAllRefVals}>allRefVals</button>
+          <button onClick={ () => { this::clearRefs() } }>clearRefs</button>
+          <button onClick={::this.getRefVal}>getRefVal a</button>
+          <button onClick={::this.focus}>focus d</button>
+          <button onClick={::this.clear}>clear a</button>
 
-          <button onClick={this.setRefs.bind(this)}>setRefs</button>
+          <button onClick={::this.setRefs}>setRefs</button>
         </section>
 
         <section>
-          <Input type='number' defValFirst={true} defVal={this.state.defVal} onChange={ (v) => { console.info(v) } } />
-          <Input type='number' defVal={this.state.defVal} onChange={ (v) => { console.info(v) } } />
-          <button onClick={ () => { this.setState({ defVal: 0 }) } }>reset to 0</button>
-          <button onClick={ () => { this.setState({ defVal: undefined }) } }>clear</button>
+          <Input type='number' value={this.state.inputValue}
+            onChange={ (v) => { this.setState({ inputValue: v }) } } />
         </section>
-      </div>
+
+        <section>
+          <input type='checkbox' ref='c-a' />
+          <input type='checkbox' ref='c-b' />
+          <input type='checkbox' ref='c-c' />
+        </section>
+
+        <section>
+          <button onClick={ () => { console.log(this::uncheckedVals('c')) } }>uncheckedVals</button>
+          <button onClick={ () => { console.log(this::checkedVals('c')) } }>checkedVals</button>
+          <button onClick={ () => { this::uncheckRefs('c') } }>uncheckRefs</button>
+          <button onClick={ () => { this::checkRefs('c') } }>checkRefs</button>
+          <button onClick={ () => { this::uncheck('c-a') } }>uncheck</button>
+          <button onClick={ () => { this::check('c-a') } }>check</button>
+        </section>
+      </article>
     )
   }
 }

@@ -12,7 +12,7 @@ npm i react-util
 ### APIs
 
 * `this::allRefVals()`
-* `this::clearAll()`
+* `this::clearRefs()`
 * `this::setRefs(obj)`
 * `this::refVal()`
   - get val - `this::refVal('ref')`
@@ -20,12 +20,14 @@ npm i react-util
 * `this::clear('ref')`
 * `this::focus('ref')`
 
+
+
 ```js
 
 import { allRefVals } from 'react-util'
 import { Component } from 'react'
 
-class Com extends Component {
+class App extends Component {
   getData() {
     console.log(this::allRefVals())
   }

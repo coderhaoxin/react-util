@@ -13,17 +13,14 @@ module.exports = {
   },
 
   externals: {
+    'react-dom': 'ReactDOM',
     react: 'React'
   },
 
   module: {
     loaders: [{
       loader: 'babel',
-      exclude: /node_modules/,
-      query: {
-        loose: 'all',
-        stage: 0
-      }
+      exclude: /node_modules/
     }]
   },
 

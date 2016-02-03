@@ -1,6 +1,6 @@
 {
   "name": "react-util",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "main": "build/index.js",
   "scripts": {
     "test": "npm run build && webpack-dev-server --port 3000 --config test/webpack.js --hot --colors",
@@ -8,7 +8,7 @@
     "build": "babel lib --out-dir build",
     "prepublish": "npm run build"
   },
-  "repository": "onebook/react-util",
+  "repository": "coderhaoxin/react-util",
   "author": "haoxin",
   "license": "MIT",
   "keywords": [

@@ -7,6 +7,7 @@ npm i react-util
 
 ### Components
 
+* Textarea
 * Input
 
 ### APIs
@@ -20,10 +21,9 @@ npm i react-util
 * `this::clear('ref')`
 * `this::focus('ref')`
 
-
+### Examples
 
 ```js
-
 import { allRefVals } from 'react-util'
 import { Component } from 'react'
 
@@ -32,7 +32,6 @@ class App extends Component {
     console.log(this::allRefVals())
   }
 }
-
 ```
 
 ### License

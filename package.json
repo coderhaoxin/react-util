@@ -1,10 +1,10 @@
 {
   "name": "react-util",
-  "version": "2.1.2",
+  "version": "2.2.0",
   "main": "build/index.js",
   "scripts": {
     "test": "npm run build && webpack-dev-server --port 3000 --config test/webpack.js --hot --colors",
-    "example": "npm run build && webpack --config webpack.js",
+    "example": "npm run build && webpack --config example/webpack.js",
     "build": "babel lib --out-dir build",
     "prepublish": "npm run build"
   },
@@ -14,7 +14,8 @@
   "keywords": [
     "toolbox",
     "react",
-    "utils"
+    "utils",
+    "util"
   ],
   "files": [
     "build/",

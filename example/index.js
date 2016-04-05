@@ -17,6 +17,8 @@ import {
   focus,
   clear,
 
+  Checkbox,
+  Radio,
   Input
 } from '..'
 
@@ -68,7 +70,7 @@ class App extends Component {
           <input type='text' ref='e_b' />
 
           <button onClick={::this.getAllRefVals}>allRefVals</button>
-          <button onClick={ () => { this::clearRefs() } }>clearRefs</button>
+          <button onClick={() => this::clearRefs()}>clearRefs</button>
           <button onClick={::this.getRefVal}>getRefVal a</button>
           <button onClick={::this.focus}>focus d</button>
           <button onClick={::this.clear}>clear a</button>
@@ -78,7 +80,16 @@ class App extends Component {
 
         <section>
           <Input type='number' value={this.state.inputValue}
-            onChange={ (v) => { this.setState({ inputValue: v }) } } />
+            onChange={v => this.setState({ inputValue: v })} />
+
+          <Checkbox checked={this.state.checkboxChecked}
+            onChange={checked => this.setState({ checkboxChecked: checked })} />
+
+          <Radio checked={this.state.radioChecked}
+            onChange={checked => this.setState({ radioChecked: checked })} />
+
+          <Radio checked={!this.state.radioChecked}
+            onChange={checked => this.setState({ radioChecked: !checked })} />
         </section>
 
         <section>
@@ -88,12 +99,12 @@ class App extends Component {
         </section>
 
         <section>
-          <button onClick={ () => { console.log(this::uncheckedVals('c')) } }>uncheckedVals</button>
-          <button onClick={ () => { console.log(this::checkedVals('c')) } }>checkedVals</button>
-          <button onClick={ () => { this::uncheckRefs('c') } }>uncheckRefs</button>
-          <button onClick={ () => { this::checkRefs('c') } }>checkRefs</button>
-          <button onClick={ () => { this::uncheck('c-a') } }>uncheck</button>
-          <button onClick={ () => { this::check('c-a') } }>check</button>
+          <button onClick={() => console.log(this::uncheckedVals('c'))}>uncheckedVals</button>
+          <button onClick={() => console.log(this::checkedVals('c'))}>checkedVals</button>
+          <button onClick={() => this::uncheckRefs('c')}>uncheckRefs</button>
+          <button onClick={() => this::checkRefs('c')}>checkRefs</button>
+          <button onClick={() => this::uncheck('c-a')}>uncheck</button>
+          <button onClick={() => this::check('c-a')}>check</button>
         </section>
       </article>
     )

@@ -18,14 +18,14 @@ import {
   clear,
 
   Checkbox,
+  Select,
   Radio,
   Input
 } from '..'
 
 class App extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {}
+  state = {
+    opt: {}
   }
 
   getAllRefVals() {
@@ -59,6 +59,19 @@ class App extends Component {
   }
 
   render() {
+    const options = [{
+      name: 'one',
+      id: 1
+    }, {
+      name: 'two',
+      id: 2
+    }, {
+      name: 'three',
+      id: 3
+    }]
+
+    const { opt } = this.state
+
     return (
       <article>
         <section>
@@ -105,6 +118,11 @@ class App extends Component {
           <button onClick={() => this::checkRefs('c')}>checkRefs</button>
           <button onClick={() => this::uncheck('c-a')}>uncheck</button>
           <button onClick={() => this::check('c-a')}>check</button>
+        </section>
+
+        <section>
+          <Select options={options} optLabel='name' optValue='id'
+            value={opt.id} onChange={opt => this.setState({opt})} />
         </section>
       </article>
     )

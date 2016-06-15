@@ -1,6 +1,6 @@
 {
   "name": "react-util",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "main": "build/index.js",
   "scripts": {
     "test": "npm run build && webpack-dev-server --port 3000 --config test/webpack.js --hot --colors",

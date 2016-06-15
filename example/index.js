@@ -16,18 +16,9 @@ import {
   refVal,
   focus,
   clear,
-
-  Checkbox,
-  Select,
-  Radio,
-  Input
 } from '..'
 
 class App extends Component {
-  state = {
-    opt: {}
-  }
-
   getAllRefVals() {
     console.log('all refs: %o', this::allRefVals())
   }
@@ -59,19 +50,6 @@ class App extends Component {
   }
 
   render() {
-    const options = [{
-      name: 'one',
-      id: 1
-    }, {
-      name: 'two',
-      id: 2
-    }, {
-      name: 'three',
-      id: 3
-    }]
-
-    const { opt } = this.state
-
     return (
       <article>
         <section>
@@ -92,20 +70,6 @@ class App extends Component {
         </section>
 
         <section>
-          <Input type='number' value={this.state.inputValue}
-            onChange={v => this.setState({ inputValue: v })} />
-
-          <Checkbox checked={this.state.checkboxChecked}
-            onChange={checked => this.setState({ checkboxChecked: checked })} />
-
-          <Radio checked={this.state.radioChecked}
-            onChange={checked => this.setState({ radioChecked: checked })} />
-
-          <Radio checked={!this.state.radioChecked}
-            onChange={checked => this.setState({ radioChecked: !checked })} />
-        </section>
-
-        <section>
           <input type='checkbox' ref='c-a' />
           <input type='checkbox' ref='c-b' />
           <input type='checkbox' ref='c-c' />
@@ -118,11 +82,6 @@ class App extends Component {
           <button onClick={() => this::checkRefs('c')}>checkRefs</button>
           <button onClick={() => this::uncheck('c-a')}>uncheck</button>
           <button onClick={() => this::check('c-a')}>check</button>
-        </section>
-
-        <section>
-          <Select options={options} optLabel='name' optValue='id'
-            value={opt.id} onChange={opt => this.setState({opt})} />
         </section>
       </article>
     )

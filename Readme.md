@@ -5,11 +5,6 @@
 npm i react-util
 ```
 
-### Components
-
-* Textarea
-* Input
-
 ### APIs
 
 * `this::allRefVals()`

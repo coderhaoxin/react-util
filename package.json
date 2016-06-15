@@ -1,6 +1,6 @@
 {
   "name": "react-util",
-  "version": "2.4.0",
+  "version": "3.0.0",
   "main": "build/index.js",
   "scripts": {
     "test": "npm run build && webpack-dev-server --port 3000 --config test/webpack.js --hot --colors",
@@ -30,9 +30,9 @@
     "babel-preset-stage-0": "6",
     "mocha": "2",
     "mocha-loader": "0",
-    "react": "0.14",
-    "react-addons-test-utils": "0.14",
-    "react-dom": "0.14",
+    "react": "15",
+    "react-addons-test-utils": "15",
+    "react-dom": "15",
     "webpack": "1",
     "webpack-dev-server": "1"
   }
